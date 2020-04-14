@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
@@ -12,23 +14,15 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      NavComponent,
-      HomeComponent,
-      RegisterComponent
-   ],
-   imports: [
-      BrowserModule,
-      HttpClientModule,
-      FormsModule
-   ],
-   providers: [
-      AuthService,
-      ErrorInterceptorProvider
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    BsDropdownModule.forRoot()
+  ],
+  providers: [AuthService, ErrorInterceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
